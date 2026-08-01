@@ -1,0 +1,251 @@
+/* ============================================
+   Jeilo CDW - Custom Styles
+   Color Scheme: Green & White
+   ============================================ */
+
+:root {
+    --primary: #198754;
+    --primary-dark: #146c43;
+    --primary-light: #20c997;
+    --accent: #d1e7dd;
+}
+
+/* ---- Global ---- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* ---- Hero Section ---- */
+.hero-section {
+    background: linear-gradient(135deg, #146c43 0%, #198754 40%, #20c997 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="70" r="1.2" fill="rgba(255,255,255,0.06)"/><circle cx="60" cy="10" r="0.8" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 200px 200px;
+}
+
+.hero-section .position-relative {
+    z-index: 1;
+}
+
+/* ---- Animations ---- */
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Event Cards ---- */
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.event-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.event-card .card-body {
+    overflow: hidden;
+}
+
+/* ---- Event Description ---- */
+.event-description {
+    line-height: 1.8;
+    color: #444;
+}
+
+.event-description p {
+    margin-bottom: 1rem;
+}
+
+/* ---- Success Checkmark ---- */
+.success-checkmark {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar .nav-link.active {
+    color: #fff !important;
+    border-bottom: 2px solid #fff;
+}
+
+/* ---- Cards ---- */
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* ---- Badges ---- */
+.badge {
+    font-weight: 500;
+}
+
+/* ---- Buttons ---- */
+.btn-success {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-success:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-success {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ---- Form Controls ---- */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.25);
+}
+
+/* ---- Footer ---- */
+footer a {
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: var(--primary-light) !important;
+}
+
+/* ---- Pagination ---- */
+.page-link {
+    color: var(--primary);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ---- Table ---- */
+.table th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+}
+
+/* ---- Admin Dashboard ---- */
+.bg-success.bg-opacity-10 {
+    background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h1.display-4 {
+        font-size: 2rem;
+    }
+
+    .hero-section .btn-lg {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* ---- Loading Spinner ---- */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner-overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--primary);
+}
+
+/* ---- Progress Bar ---- */
+.progress {
+    border-radius: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* ---- Sticky Registration Card ---- */
+@media (min-width: 992px) {
+    .sticky-top {
+        z-index: 1020;
+    }
+}

@@ -1,0 +1,9 @@
+# Admin directory - security restrictions
+# Block direct access to admin includes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^includes/ - [F,L]
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
